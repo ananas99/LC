@@ -30,7 +30,8 @@ let rec build_tree l root nstring = match l with
                                                        build_tree li root nstring  
                                                    else (if (nstring = (a+1)) then 
                                                             let () = vec.(index) <- Node(a+1,b) in
-                                                            aux (n+1) vec.(index))
+                                                            aux (n+1) vec.(index)
+                                                        else build_tree li root nstring) 
                               else build_tree li root nstring  
         in (aux 0 root)                  
 ;; 
@@ -45,5 +46,6 @@ let rec abc l cnt = match l with
                abc li (cnt+1)
 ;;
 
-let () = build_tree ["banana";"anana";"nana";"ana";"na";"a"] r 1 
+(*let () = build_tree ["banana";"anana";"nana";"ana";"na";"a"] r 1 *)
 
+let () = abc ["lll";"ll";"l"];["ab";"b"];["ll";"l"] 1
